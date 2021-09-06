@@ -1,0 +1,25 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: orderService
+  datasource:
+    username: root
+    password: 12345678
+    url: jdbc:mysql://localhost:3306/order-service
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        cluster-name: WH
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:10086/eureka
+
+# 负载均衡规则类
+userService:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule

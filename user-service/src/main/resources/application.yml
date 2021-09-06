@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: userService
+  datasource:
+    url: jdbc:mysql://localhost:3306/user-service
+    password: 12345678
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        cluster-name: WH
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:10086/eureka
+logging:
+  level:
+    com:
+      jwl:
+        dao: debug
